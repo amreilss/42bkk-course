@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome สำหรับไอคอน -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        /* Basic reset for body and html */
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgb(167, 48, 48);
+            color: white;
+            padding: 10px 20px;
+            z-index: 10;
+            display: flex; /* ใช้ flexbox */
+            justify-content: center; /* จัดให้เนื้อหาตรงกลาง */
+            gap: 20px; /* เพิ่มช่องว่างระหว่างลิงก์ */
+        }
+
+        
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 15px;
+            font-size: 18px;
+            @media screen and (max-width: 500px) {
+                font-size: 14px;
+            }
+        }
+
+        .navbar a:hover {
+            background-color: #000000;
+        }
+
+        /* Parallax Section Styling */
+        .parallax {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 900px;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            color: white;
+        }
+
+        /* Text Styling inside Parallax Sections */
+        .parallax-text {
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        /* About Me Section */
+        .about-me-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 50px 20px;
+            background-color: #f9f0ef;
+        }
+
+        .about-me-container img {
+            width: 300px;
+            height: 400px;
+            border-radius: 0%;
+            margin: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-me-info {
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .about-me-info h2 {
+            font-size: 46px;
+            color: #a73030;
+        }
+
+        .about-me-info p {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .about-me-info .info-label {
+            font-weight: bold;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 50px 20px;
+        }
+
+        .certificates {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px;
+        }
+
+        .certificates img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .certificates h3 {
+            margin-top: 15px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* First Parallax background */
+        #first {
+            background-image: url('https://scontent.fbkk29-6.fna.fbcdn.net/v/t39.30808-6/476611341_3927443860853217_8971950759779417948_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEySFUKSk4AoTfGIh9pqflBwJKgwoC6vVbAkqDCgLq9Vj336GTmX6uHlyWwwgymA8PSYqkzLoL15CEStDvV4-WB&_nc_ohc=xIl9MnnUdCUQ7kNvgF87jOa&_nc_oc=Adgc4mh7jnQ55ZOsh5xaLYf_MmLeOQJokRCPleG23pEwj-QEV5bagKxlabUR4GbUvyg&_nc_zt=23&_nc_ht=scontent.fbkk29-6.fna&_nc_gid=ASLWhL7dnZ9OKTseWkXXpS_&oh=00_AYBi_cq4AiVEMrfjBwnGYGv9JzoI6OuD2QzTuHX8yBDLHg&oe=67AC05B2');
+        }
+
+        /* Second Parallax background */
+        #second {
+            background-image: url('https://scontent.fbkk29-7.fna.fbcdn.net/v/t39.30808-6/476275387_3927441670853436_3726534919583978913_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEXuWpFP4n40oWDzY4SDdSilk-bQlCjmVWWT5tCUKOZVcnTF6Fyv_5jLTyzc4NP9TfJBg08GrQTs4MlnjSKqs1T&_nc_ohc=ORzqL7NSteYQ7kNvgEwIjkQ&_nc_oc=Adj5pPJ_kSa09rM6pitJPVNlJoz4Gds8WwcAN-NQzq-fhYYvBzHwW0GxbqBqaszSXJg&_nc_zt=23&_nc_ht=scontent.fbkk29-7.fna&_nc_gid=ADdbB7w8-Ro9995mF48sYv3&oh=00_AYBeLsl8cLEnl7hri4TtsAfhDiXOtZEzsfwirLXJCnSY-Q&oe=67AC0DBD');
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 50px 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        .contact h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            font-size: 18px;
+        }
+
+        /* Heading Style for Sections */
+        .section-heading {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #A73030; /* Dark red color for heading */
+            font-weight: bold;
+        }
+
+        /* My Skills Section using Flexbox */
+        #skills .textcontent {
+            display: flex;
+            flex-direction: column; /* Arrange the text vertically */
+            justify-content: center; /* Center vertically */
+            align-items: center;     /* Center horizontally */
+            padding: 20px;           /* Add some padding for spacing */
+        }
+
+
+        .contact p {
+            font-size: 18px;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px; /* ระยะห่างระหว่างไอคอนกับข้อความ */
+        }
+
+        .contact a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact a:hover {
+            color: #ffcc00; /* เปลี่ยนสีเมื่อ hover */
+        }
+
+        .contact i {
+            font-size: 24px; /* ขนาดของไอคอน */
+        }
+
+    </style>
+    <title>My Portfolio</title>
+</head>
+<body>
+
+    <<div class="navbar">
+        <a href="index.html">main</a>
+        <a href="#about">about</a>
+        <a href="#second">experience</a> <!-- เปลี่ยน href เป็น #second -->
+        <a href="#contact">contact</a>
+    </div>
+    
+
+    <!-- First Parallax Section -->
+    <div class="parallax" id="first">
+        <div class="parallax-text">SKAEWMAN's Portfolio</div>
+    </div>
+
+    <!-- About Me Section -->
+    <div id="about" class="about-me-container">
+        <img src="https://scontent.fbkk29-7.fna.fbcdn.net/v/t39.30808-6/475959430_3927281547536115_5096851919771625847_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHCQA4LHosAyZa7rERBHRkf0R9ORyqDEOfRH05HKoMQ586LwtYfhz4s2a9_ttdkckJvsR0QEOvtdg8_JVXqT5KJ&_nc_ohc=WyGUnfmpBqMQ7kNvgFEgz5Z&_nc_oc=AdjT6P3v0iJDmobYL_oH2DRDG_N9WNABFB7J_arfLXJaVY_VKxgi380koeQzrI80pIU&_nc_zt=23&_nc_ht=scontent.fbkk29-7.fna&_nc_gid=ARij5z8FnGfCNSlZNR0rTJj&oh=00_AYBKl7c1JHmqm0jOHs--Gau52niWv1iE-KvuSjmKyhllHQ&oe=67ABF7CA" alt="Profile Picture">
+        <div class="about-me-info">
+            <h2>About Me</h2>
+            <p><span class="info-label">Sasiwimol Kaewmanee</p>
+            <p><span class="info-label"></span> Department of Computer Engineering
+                Bachelor of Engineering program in Physics and IoT System
+                Dual Degree Program</p>
+            <p><span class="info-label">King Mongkut's International Demonstration School</span></p>    
+        </div>
+    </div>
+
+    <!-- Second Parallax Section -->
+    <div class="parallax" id="second">
+        <div class="parallax-text">EXPERIENCE</div>
+    </div>
+
+    <!-- My Project Section -->
+    <div id="portfolio">
+        <div class="section-heading">My Project</div>  <!-- Heading for Portfolio Section -->
+        <div class="portfolio">
+            <div class="certificates">
+                <img src="https://scontent.fbkk29-8.fna.fbcdn.net/v/t39.30808-6/476631183_3927460977518172_4661432436807580729_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFhwcGPXtVm-PMJBxB6E1_RB24bXhhHAEgHbhteGEcASKMf7EZsFKIHhmjygL1NJip1KAp_7qrYwS_gaMKiChg3&_nc_ohc=-5HDimj0pDQQ7kNvgG0o8Aq&_nc_oc=Adi05Xgv_Vu471hGf2VRWaA85yUEh8cmvWehRpIrsiVfM1Nm9coHU3dgvJIlmrKQYgk&_nc_zt=23&_nc_ht=scontent.fbkk29-8.fna&_nc_gid=AlCq9EOzFq2yfkbbmY2O1pB&oh=00_AYC_mqAB9EITrbduHQrIZ0pUUFv20-xASHhQ9KR_uhbcdQ&oe=67ABF820">
+                <h3>Earthquake AI</h3>
+                <p>โปรเจคคาดการณ์และทำนายความเสียหายที่เกิดจากแผ่นดินไหว</p>
+            </div>
+            <div class="certificates">
+                <img src="https://scontent.fbkk29-9.fna.fbcdn.net/v/t39.30808-6/476443082_3927460997518170_4141045012160359787_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFwEW0iRVW33vWuOYphx6su8BAI5HrMXwbwEAjkesxfBoRbyIi3RwK0cG7KI0CXuMPILQxQV9PM6M_PVDlhwBIY&_nc_ohc=hos3SFpTpfsQ7kNvgFNKPkA&_nc_oc=Adg4-W3xPsgfjlGcYflNaTqT_RqMvDggpy6gvoxaVmypx_G1r9RhmeE2eI7xHCO8qB8&_nc_zt=23&_nc_ht=scontent.fbkk29-9.fna&_nc_gid=A7gphBaR7oqLIjlTAxer36H&oh=00_AYA40OwaZtH5jwp5WtOvi-hcJ1qOQoGb9UTQmYTtfEIjzw&oe=67AC1253">
+                <h3>NIAU Application</h3>
+                <p>โปรเจคแอพพลิเคชั่นทดลองสีเครื่องสำอาง ให้ตรงกับ personal color</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- My Certificates Section -->
+    <div id="certificates">
+        <div class="section-heading">My Certificates</div>
+        <div class="portfolio">
+            <div class="certificates">
+                <img src="https://scontent.fbkk29-1.fna.fbcdn.net/v/t39.30808-6/476463087_3927349427529327_2450089940464093137_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGF_zKYywfYc-SJE3vQnSPjElgJhtAQQL8SWAmG0BBAv03vtsYyer18ikT2Tt2noqel8C4GgAaAu-3-UjrSM36z&_nc_ohc=FbnvxuUE59wQ7kNvgExNtCv&_nc_oc=AdhGPNLu5EsKCYGaGhBTvmpFfXNX1VuQ2eCfCimzAFmNVN7ifNQbnNsdvnO_JX2amDM&_nc_zt=23&_nc_ht=scontent.fbkk29-1.fna&_nc_gid=AeXiFBj6B-iX0aPler4M6bX&oh=00_AYBl4T0lyiU1vibwI8gPs7hOmoa097LYEGIfrdxOzqlBFA&oe=67ABC1CC" alt="Certificates 1">
+                <h3>My Order</h3>
+                <p>คอร์สเรียนเรื่องการจัดการคลาวด์ Big Data แลพ Machine Learning ของบริษัท My Order</p>
+            </div>
+            <div class="certificates">
+                <img src="https://scontent.fbkk29-9.fna.fbcdn.net/v/t39.30808-6/476925814_3927354534195483_6218126853251130736_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeF3vte4I9u2Z0s5hgCBxVgqVVFXUhGg6WRVUVdSEaDpZI4S5oh-4tsUls8SQ0gfJ0gBunLcX-45FIm5K1LrPJlo&_nc_ohc=1CW_j5PzLjAQ7kNvgHwe1oM&_nc_oc=AdjthrW4Q0R8VSFGEPJKjijd1_2jiKx0f0ozwEefP5gW_rd1xQ_pYjge_BLjQTFfZ_A&_nc_zt=23&_nc_ht=scontent.fbkk29-9.fna&_nc_gid=AMKvYePfMEkpTqBSrv-oJI_&oh=00_AYCgjhYSe-76yjmu4UjyotQYigQqH2vLuvDrlSUxjWvw4A&oe=67ABDCDA" alt="Certificates 2">
+                <h3>นนทรีเกมส์ 2567</h3>
+                <p>ตัวแทนนักกีฬาบริดจ์ ในกีฬามหาลัย "นนทรีเกมส์ ครั้งที่ 49"</p>
+            </div>
+            <div class="certificates">
+                <img src="https://scontent.fbkk29-1.fna.fbcdn.net/v/t39.30808-6/476609878_3927398914191045_8339294737752108729_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGVEpk7csV8ESoMJent4MxfEccJIJ8Xo8kRxwkgnxejye559EEU161Z05XpShWDPOsiTZGChz6PNBSc7v8u7evO&_nc_ohc=4mcUsZRhQ2oQ7kNvgEk0KM7&_nc_oc=AdhBruskstPEAI67wvOtdn7gRXMketF87TgYNnnFdggbxhpEF-WUcq_CPinsCCYHvh8&_nc_zt=23&_nc_ht=scontent.fbkk29-1.fna&_nc_gid=AYgE6lrVOXop6DPCQ9yPwrw&oh=00_AYANQQp7QWvQVn97deOKroj2HtUa1Ft9scTk0Q7nMsOQGw&oe=67ABDDC5" alt="Certificates 4">
+                <h3>ChulaMooc-Learn Python</h3>
+                <p>คอร์สเรียนไพธอนเบื้องต้น ของจุฬาลงกรณ์มหาวิทยาลัย</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- My Skills Section -->
+    <div id="skills">
+        <div class="section-heading">My Skills</div>
+        <div class="textcontent">
+            <p><strong>Programming Languages:</strong> Python, C, C++</p>
+            <p><strong>Web Development:</strong> HTML, CSS, Node.js, JavaScript</p>
+            <p><strong>Tools:</strong> Figma, Solidworks, Microsoft office</p>
+            <p><strong>Other Skills:</strong> Machine Learning, Data Analysis, Cloud Computing</p>
+        </div>
+    </div>
+
+    <div id="contact" class="contact">
+        <h2>Contact Me</h2>    
+        <p><i class="fa-solid fa-phone"></i> 083-524-6161</p>
+        <p><i class="fa-solid fa-envelope"></i> sasiwimol.kmn@gmail.com</p>
+        
+        <p>
+            <a href="https://www.linkedin.com/in/sasiwimolkaewmanee/" target="_blank">
+                <i class="fa-brands fa-linkedin"></i> LinkedIn
+            </a>
+        </p>
+        
+        <p>
+            <a href="https://www.facebook.com/ssasiwimol.l/" target="_blank">
+                <i class="fa-brands fa-facebook"></i> Facebook
+            </a>
+        </p>
+        
+        <p>
+            <a href="https://www.instagram.com/amreilss/" target="_blank">
+                <i class="fa-brands fa-instagram"></i> Instagram
+            </a>
+        </p>
+    </div>
+    

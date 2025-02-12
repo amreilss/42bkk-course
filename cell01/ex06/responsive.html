@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Table</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    table {
+      width: 100%;
+      height: 100%;
+      border: 1px solid black;
+      border-collapse: collapse;
+      table-layout: fixed; /* บังคับให้เซลล์ในตารางปรับขนาดอัตโนมัติ */
+    }
+
+    td {
+      text-align: center;
+      vertical-align: middle;
+      font-size: 3vw; /* ขนาดตัวอักษรปรับตามความกว้างของหน้าจอ */
+      color: white;
+    }
+
+    /* ตั้งสีพื้นหลังของแต่ละเซลล์ */
+    .box1 {
+      background-color: #FF5733; /* สีแดง */
+    }
+
+    .box2 {
+      background-color: #33CFFF; /* สีน้ำเงิน */
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <tr>
+      <td class="box1">Hello</td>
+      <td class="box2">Thailand</td>
+    </tr>
+  </table>
+</body>
+</html>

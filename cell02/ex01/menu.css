@@ -1,0 +1,72 @@
+/* ตั้งค่าพื้นฐาน */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9; /* สีพื้นหลัง */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* ให้เมนูอยู่ตรงกลางหน้าจอ */
+}
+
+/* กล่องเมนู */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* ปุ่มเมนู */
+.dropbtn {
+    background-color: rgb(255, 195, 0); /* สีเหลืองเหมือนขนมปัง */
+    color: #333; /* สีตัวอักษร */
+    padding: 15px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* เมื่อเอาเมาส์ไปชี้ที่ปุ่ม */
+.dropbtn:hover {
+    background-color: rgb(255, 165, 0); /* สีเข้มขึ้น */
+    transform: scale(1.05); /* ขยายเล็กน้อย */
+}
+
+/* เมนู Drop-down */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    z-index: 1;
+}
+
+/* ลิงก์ในเมนู */
+.dropdown-content a {
+    color: #333; /* สีตัวอักษร */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+/* เมื่อเอาเมาส์ไปชี้ที่ลิงก์ */
+.dropdown-content a:hover {
+    background-color: #f0f0f0; /* สีเทาอ่อน */
+}
+
+/* แสดงเมนูเมื่อ hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* เมื่อ hover ที่ปุ่ม */
+.dropdown:hover .dropbtn {
+    background-color: rgb(255, 140, 0); /* สีส้มเข้ม */
+}

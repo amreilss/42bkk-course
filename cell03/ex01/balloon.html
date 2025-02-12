@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explode the Balloon</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #ballon {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div onclick="addSize()" onmouseenter="shrinkBalloon()" onmouseleave="shrinkBalloon()" id="ballon"></div>
+    </div>
+
+    <script>
+        const ballon = document.getElementById("ballon");
+        let size = 200; // ขนาดเริ่มต้นของบอลลูน
+        let colorCycle = ['red', 'green', 'blue']; // ลำดับสีของบอลลูน
+        let currentColorIndex = 0; // ใช้ติดตามสีที่เลือกในลำดับ
+
+        // ฟังก์ชันในการเปลี่ยนสี
+        function changeColor() {
+            ballon.style.backgroundColor = colorCycle[currentColorIndex];
+            currentColorIndex = (currentColorIndex + 1) % colorCycle.length;
+        }
+
+        // ฟังก์ชันในการเพิ่มขนาดบอลลูนเมื่อคลิก
+        function addSize() {
+            size += 10; // เพิ่มขนาดบอลลูนทีละ 10px
+            if (size > 420) {
+                // ถ้าขนาดบอลลูนเกิน 420px ให้รีเซ็ตกลับไปที่ขนาด 200px
+                size = 200;
+                ballon.style.backgroundColor = 'red'; // รีเซ็ตสีเป็นสีแดง
+                currentColorIndex = 0; // รีเซ็ตการเลือกสีให้เริ่มต้นที่สีแดง
+            }
+            ballon.style.width = `${size}px`;
+            ballon.style.height = `${size}px`;
+            changeColor(); // เปลี่ยนสีบอลลูนเมื่อคลิก
+        }
+
+        // ฟังก์ชันในการลดขนาดบอลลูนเมื่อเมาส์เข้าและออก
+        function shrinkBalloon() {
+            if (size > 200) {
+                size -= 5; // ลดขนาดบอลลูนทีละ 5px
+            }
+            ballon.style.width = `${size}px`;
+            ballon.style.height = `${size}px`;
+            // เปลี่ยนสีให้ตรงข้ามกับลำดับสีเดิมเมื่อเมาส์เข้าออก
+            currentColorIndex = (currentColorIndex - 1 + colorCycle.length) % colorCycle.length;
+            ballon.style.backgroundColor = colorCycle[currentColorIndex];
+        }
+    </script>
+</body>
+
+</html>

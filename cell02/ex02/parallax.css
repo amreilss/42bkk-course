@@ -1,0 +1,45 @@
+/* Basic reset for body and html */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Parallax Section Styling */
+.parallax {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 900px;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    color: white;
+}
+
+/* Text Styling inside Parallax Sections */
+.parallax-text {
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* Scrollable Content Section */
+.textcontent {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: black;
+    color: white;
+}
+
+/* First Parallax background (Smile Dog) */
+#first {
+    background-image: url('https://d.newsweek.com/en/full/1905075/file-photo-smiling-dog.jpg?w=1600&h=1600&q=88&f=9f3d5e5cbc46149afafc81b9e8306f79');
+}
+
+/* Second Parallax background (Cry Dog) */
+#second {
+    background-image: url('https://i.redd.it/gd7suscsqp781.jpg');
+}

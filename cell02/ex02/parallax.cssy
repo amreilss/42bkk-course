@@ -1,0 +1,44 @@
+/* Basic styles to reset the page */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling for parallax sections */
+.parallax {
+    height: 900px;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* Center the text in parallax sections */
+.parallax-text {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Styling for the scrollable content */
+.textcontent {
+    color: white;
+    text-align: center;
+    padding: 50px 20px; /* ลด padding ให้แถบเล็กลง */
+    background-color: black; /* เปลี่ยนเป็นสีดำ */
+}
+
+/* First Parallax background (Smile Dog) */
+#first {
+    background-image: url('https://d.newsweek.com/en/full/1905075/file-photo-smiling-dog.jpg?w=1600&h=1600&q=88&f=9f3d5e5cbc46149afafc81b9e8306f79');
+}
+
+/* Second Parallax background (Cry Dog) */
+#second {
+    background-image: url('https://i.redd.it/gd7suscsqp781.jpg');
+}

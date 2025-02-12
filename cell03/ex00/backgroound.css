@@ -1,0 +1,11 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* ความสูงเต็มหน้าจอ */
+    display: flex; /* ใช้ Flexbox */
+    justify-content: center; /* จัดแนวในแนวนอนให้ตรงกลาง */
+    align-items: center; /* จัดแนวในแนวตั้งให้ตรงกลาง */
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* สีพื้นหลังเริ่มต้น */
+    transition: background-color 0.3s ease-in-out; /* เปลี่ยนสีพื้นหลังอย่างนุ่มนวล */
+}

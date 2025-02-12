@@ -1,0 +1,35 @@
+/* รีเซ็ตค่า margin/padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+table {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  border-collapse: collapse;
+  table-layout: fixed; /* บังคับเซลล์ให้ปรับขนาดอัตโนมัติ */
+}
+
+td {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 3vw; /* ขนาดตัวอักษรปรับตามความกว้างของหน้าจอ */
+  color: white;
+}
+
+/* สีพื้นหลังของแต่ละเซลล์ */
+.box1 {
+  background-color: #FF5733; /* สีแดง */
+}
+
+.box2 {
+  background-color: #33CFFF; /* สีน้ำเงิน */
+}
